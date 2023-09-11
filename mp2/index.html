@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>RSPSLS Game!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="icon" type="image" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5JAthzxV30QSqGa0D--K6Xcabyrdhs9vo9g&usqp=CAU">
+  <link rel="stylesheet" href="https://fontawesome.com/path/to/font-awesome/css/font-awesome.min.css" />
+  <script src="https://use.fontawesome.com/d2b46f845b.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body class="bg-warning-subtle">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid bg-primary">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-warning link-light" aria-current="page" href="/09-10-23/index.html"><b><h4><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5JAthzxV30QSqGa0D--K6Xcabyrdhs9vo9g&usqp=CAU" style="width: 50px; height: 50px; margin-right: 10px;">
+               Let's Play!</b></a></h4>
+          </li>
+         
+          </ul>
+          </div>
+          </div>
+</nav>
+<audio src="game.mp3" autoplay loop="true"></audio>
+  <h1><i class="fa fa-question-circle pc-icon m-5"></i>  Lets Play! </h1>
+  <div class="scoreboard">
+    <div class="player-score text-center " style="width: 300px;">Player: 0</div>
+    <div class="computer-score text-center" style="width: 300px;">Computer: 0</div>
+  </div>
+  <ul><center>
+  <li><div class="choices">
+    <div class="choice" id="rock">
+        <i class="icon-option fa fa-hand-rock-o" aria-hidden="true"></i>
+    </div></li>
+    
+    <li><h2><div class="choice" id="paper">
+      <i class="icon-option fa fa-hand-paper-o"></i>
+    </div></li>
+    <li><div class="choice" id="scissors">
+      <i class="icon-option fa fa-hand-scissors"></i>
+    </div>
+  </div></li>
+  <li><div class="choices">
+    <div class="choice" id="lizard">
+        <i class="icon-option fa fa-hand-lizard-o" aria-hidden="true"></i>
+    </div></li>
+   <li> <div class="choices">
+        <div class="choice" id="spock">
+            <i class="icon-option fa fa-hand-spock-o" aria-hidden="true"></i>
+        </div></h2></li>
+
+    </ul></center>
+  <div class="result" id="result">
+    <p>Choose your weapon!</p>
+  </div>
+  <div id="computer-choice">
+    <h2 class="winner text-light my-5"></h2>
+  </div>
+  <div class="timer" id="timer">
+    <p>Time left: <span id="countdown">20</span>s</p>
+  </div>
+  <button class="play-again" id="play-again">Play Again</button>
+  <div id="openAlert"></div>
+   <!-- match history ugh cram mode -->
+   
+   <center>
+    <br>
+    <!-- <div class="container-fluid" style="background-color: yellowgreen;"> -->
+    <div class="container w-50 bg-info rounded border">
+    <h2 class="lead fw-bold text-center text-dark display-6 my-4 p-4">Match History</h2>
+    <div class="bg-transparent text-center">
+        <table id="matchHistory" class="table table-transparent rounded-3 border" >
+            <thead>
+                <th class="col-3 text-warning text-center">PlayerHand</th>
+                <th class="col-3 text-info"> ComputerHand</th>
+                <th class="col-3 text-success"> Result </th>
+            </thead>
+            <tr>
+                <td id="pHand" class="pHand text-dark" ></td>
+                <td id="cHand" class="cHand text-dark" ></td>
+                <td id="matchRes" class="matchRes text-dark"></td>
+            </tr>
+        </table>
+    </div>
+  </div>
+</div></center>
+
+<br>
+<br>
+<hr>
+<!-- footer -->
+  
+<footer class="container-fluid w-100 py-4 flex-shrink-0 bg-body-secondary">
+  <div class="container py-4">
+      <div class="row gy-3 gx-3">
+          <div class="col-lg-4 col-md-4">
+            <p class="small text-muted pt-2 mb-0 text-dark"><h4 class="text-dark">Follow us </h4></p>
+              <a href="https://www.facebook.com"  class="fa fa-facebook text-center text-light text-decoration-none p-3 m-auto rounded-circle" style="background-color: #3B5998; width: 60px; height: 60px; font-size: 30px;"></a>
+                <a href="https://www.twitter.com" class="fa fa-twitter text-center text-light text-decoration-none p-3 ms-1 me-1 rounded-circle" style="background-color: #55ACEE; width: 60px; height: 60px; font-size: 30px;"></a>
+                  
+                  
+              
+              
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-6">
+        <div class="">
+          <h4 class="text-dark">Quick Link</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="index.html" class="text-decoration-none text-dark">Home</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-dark">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-dark">Calculator</a>
+            </li>
+            <li>
+              <a href="index.html" class="text-decoration-none text-dark">Sample Games</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6">
+        <div>
+          <h4 class="text-dark"> What we do</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" class="text-decoration-none text-dark">Weighting Scale</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+          <div class="col-xl-3 col-lg-3 col-md-6">
+        <div>
+          <h4 class="text-dark">Newsletter</h4>
+          <div>
+            <label for="Newsletter" class="form-label text-dark">Subscribe To Our Newsletter</label>
+            <input type="text" class="form-control" Placeholder="Enter Your Email">
+            <button class="btn btn-primary fa fa-paper-plane mt-3" data-bs-toggle="modal" id="exampleModalLabel2" data-bs-target="#exampleModal2">  Subscribe</button>
+            
+            
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2"> Subscribe </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     Thank you for subcribing! 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                    
+                  </div>
+                </div>
+          </div>
+        </div>
+          </div>
+        </div>
+          </div>
+      </div>
+    
+    
+  </div>
+</footer>
+  <script src="index.js"></script>
+</body>
+</html>
